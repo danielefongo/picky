@@ -28,7 +28,7 @@ async function chooseProjectTaskAndDescription (toggl, asker) {
   const tasks = await toggl.getTasks(project.id)
 
   const task = tasks.length > 1 ? await asker.chooseTask(tasks) : tasks[0]
-  const description = await asker.inquire('What have you done?')
+  const description = await asker.input('What have you done?')
 
   return { project, task, description }
 }
